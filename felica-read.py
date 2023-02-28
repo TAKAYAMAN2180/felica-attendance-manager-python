@@ -53,9 +53,6 @@ if __name__ == '__main__':
     except IndexError:
         print("グループIDが指定されていません")
         sys.exit(-1)
-    if not (isinstance(groupId,int)):
-        print("指定したGroup IDは存在していません")
-        sys.exit(-1)
 
     #グループIDの一覧を取得する
     response=requests.get("https://felica-attendance-manager.azurewebsites.net/api/rooms/show")
