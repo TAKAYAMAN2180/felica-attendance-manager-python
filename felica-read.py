@@ -32,7 +32,10 @@ class CardReader():
 
             #名前の情報についてのGETリクエストを送信
             name=requests.get("https://felica-attendance-manager.azurewebsites.net/api/name/get?idm="+self.idm);
-            print("Name:"+name.text);
+            if name.text=="":
+                print("Name:"+self.idm);
+            else:
+                print("Name:"+name.text);
 
             return True
 
